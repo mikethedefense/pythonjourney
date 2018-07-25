@@ -4,3 +4,4 @@ if any(name.startswith(letter) for letter in second_half):
     print(name,'belongs in the second half of the alphabet')
 else:
     print(name,'does not belong in the second half of the alphabet')
+# You may try other names to see what happens
