@@ -19,6 +19,6 @@ elif prompt ==2:
     print("You have selected Attempting to find leg length")
     hypo = int(input("Enter the hyopthenuse of the triangle:")) #Finding the hypothenuse
     leg = int(input("Enter the leg of the triangle:")) #This is the leg of the triangle that has been already assigned
-    calculation = math.sqrt(hypo-leg)
+    calculation = math.sqrt(hypo**2-leg**2)
     answer = round(calculation,1)
     print("The leg of the triangle is",answer)
