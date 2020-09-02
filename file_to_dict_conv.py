@@ -12,4 +12,6 @@ def add_info_to_dict(seq):
         results.append({"name": name, "address": address, "age": age})
     return results
 
-read_file(r"D:\Python Programs\Python Learning New\FileInputOutput\info.csv")
+directory = r"D:\Python Programs\Python Learning New\FileInputOutput\info.csv"
+information = [("Mike","1000 CrossRd", 21), ("John", "10310 Washington St", 18), ("Paul","3412 Kennedy Rd",25)]
+info(directory, information)
