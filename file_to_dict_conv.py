@@ -9,7 +9,7 @@ def add_info_to_dict(seq):
     results = [] 
     for line in seq:
         name, address, age = line.split(',')
-        results.append({"name": name, "address": address, "age": age})
+        results.append({"name": name, "address": address, "age": int(age)})
     return results
 
 directory = r"D:\Python Programs\Python Learning New\FileInputOutput\info.csv"
