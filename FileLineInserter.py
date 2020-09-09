@@ -3,13 +3,11 @@
 # Deal with a bad file being passed in
 import sys
 
-def insert_number(filename): # Add a default value to the function
+def check_for_number_seq(fin, seq):
     """
-    Function that takes in a txt file from the command line (sys.argv) and inserts a line number in front of each line in the file.
+    This function checks if a file already has a line number sequence in front of it
     """
-    words = []
-    # Read the file and append each line to a list of tuples (line number, line context)
-    with open(filename) as fout:
+    with open(fin) as fout:
         for count, line in enumerate(fout):
             # Check if file already has a line number sequence
             if line.startswith("1") and count == 0: 
@@ -18,13 +16,22 @@ def insert_number(filename): # Add a default value to the function
                 continue
             if line.startswith("3") and count == 2:
                sys.exit("Ended: File already has a line count")
-            words.append(f"{count + 1} {line}")
-        
+            seq.append(f"{count + 1} {line}")
+
+def insert_number(filename): # Add a default value to the function
+    """
+    Function that takes in a txt file from the command line (sys.argv) and inserts a line number in front of each line in the file.
+    """
+    words = []
+    
+    # Read the file and append each line to a list of tuples (line number, line context)
+    check_for_number_seq(filename, words)
+   
     # Overwrite the file with the list of tuples
     with open(filename, 'w') as fout:
         for newline in words:
             fout.write(newline)
-            
+
 def log(error):
     """
     This function logs the error, and prints it out. 
